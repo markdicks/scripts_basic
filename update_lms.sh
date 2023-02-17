@@ -3,6 +3,15 @@
 # Get the name of the script from the user
 read -p "Enter the name of the script to move: " script_name
 
+# Check if the script exists in any directory
+if whereis -b "$script_name"; then
+  echo "Script exists in the following directories:"
+  whereis -b "$script_name"
+  echo "Removing old versions of the script..."
+  # Remove the script from all directories where it is found
+  sudo rm -rf $(whereis -b "$script_name" | cut -d" " -f2-)
+fi
+
 # Move the script to /bin
 sudo mv ~/Downloads/"$script_name" /bin/
 
