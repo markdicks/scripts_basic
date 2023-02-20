@@ -1,6 +1,6 @@
 #!/bin/bash
 
-script_name="wtc_lms"
+script_name="wtc-lms"
 
 # Check if the script exists in any directory
 if whereis -b "$script_name"; then
