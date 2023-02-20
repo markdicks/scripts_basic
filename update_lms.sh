@@ -24,7 +24,7 @@ if whereis -b "$script_name"; then
 fi
 
 # Move the script to /bin
-sudo mv ~/Downloads/wtc_scripts/"$script_name" /bin/
+sudo mv ~/Downloads/"$script_name" /bin/
 
 # Make the script executable
 sudo chmod +x /bin/"$script_name"
