@@ -18,4 +18,4 @@ sudo mv ~/Downloads/"$script_name" /bin/
 sudo chmod +x /bin/"$script_name"
 
 echo "Script moved and made executable."
-wtc_lms --version
+wtc-lms --version
