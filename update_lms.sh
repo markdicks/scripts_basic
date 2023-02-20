@@ -1,18 +1,6 @@
 #!/bin/bash
 
-# Prompt the user to enter the name of the script to move
-read -p "Enter the name of the script to move: " script_name
-
-# Ask the user to confirm the script they want to move
-read -p "Are you sure you want to move $script_name to /bin? (y/n): " confirm
-
-# Loop until the user confirms the script they want to move
-while [[ $confirm != "y" ]]; do
-  # Prompt the user to re-enter the name of the script
-  read -p "Enter the name of the script to move: " script_name
-  # Ask the user to confirm the script they want to move
-  read -p "Are you sure you want to move $script_name to /bin? (y/n): " confirm
-done
+script_name="wtc_lms"
 
 # Check if the script exists in any directory
 if whereis -b "$script_name"; then
@@ -30,3 +18,4 @@ sudo mv ~/Downloads/"$script_name" /bin/
 sudo chmod +x /bin/"$script_name"
 
 echo "Script moved and made executable."
+wtc_lms --version
