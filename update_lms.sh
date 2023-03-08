@@ -14,5 +14,5 @@ sudo mv $(pwd)/wtc_scripts/"$script_name" /bin/ >/dev/null 2>&1
 # Make the script executable
 sudo chmod +x /bin/"$script_name" >/dev/null 2>&1
 rm -rf wtc_scripts/ >/dev/null 2>&1
-echo "Script moved and made executable."
+echo "LMS was updated succesfully"
 wtc-lms --version
