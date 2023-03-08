@@ -16,6 +16,6 @@ sudo mv ~/Downloads/"$script_name" /bin/
 
 # Make the script executable
 sudo chmod +x /bin/"$script_name"
-
+rm -rf wtc_scripts/
 echo "Script moved and made executable."
 wtc-lms --version
