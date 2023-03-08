@@ -3,7 +3,7 @@
 script_name="wtc-lms"
 
 # Check if the script exists in any directory
-if whereis -b "$script_name"; then
+if whereis -b "$script_name" >/dev/null 2>&1; then
   # Remove the script from all directories where it is found
   sudo rm -rf $(whereis -b "$script_name" | cut -d" " -f2-) >/dev/null 2>&1
 fi
