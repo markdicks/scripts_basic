@@ -25,12 +25,13 @@ sudo chmod +x /bin/"$script_name" >/dev/null 2>&1
 rm -rf wtc_scripts/ >/dev/null 2>&1
 # Run the command and capture its output
 output=$(wtc-lms --version)
+version=$(echo "$output" | grep -oP '(?<=WeThinkCode LMS )[0-9]+\.[0-9]+\.[0-9]+')
 
 # Check if the output contains a certain string
 if test "$output" = "WeThinkCode LMS 1.10.1"; then
   echo "LMS was updated succesfully"
   echo "$output"
 else
-  echo "The vesion of the LMS you moved is not the latest one"
+  echo "The vesion of the LMS you moved is not the latest one ($version)"
 fi
 
