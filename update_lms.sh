@@ -22,11 +22,11 @@ if test "$output" = "wtc_scripts/update_lms.sh: 18: wtc-lms: not found"; then
   echo "Error: Please make sure you download wtc-lms from slack"
   echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
   echo "Make sure it goes under the Downloads directory"
-elif test "$output" = "wtc_scripts/update_lms.sh: 21: [[: not found"* ]]; then
+elif test "$output" = "wtc_scripts/update_lms.sh: 21: [[: not found"*; then
   echo "Error: Please make sure you download wtc-lms from slack"
   echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
   echo "Make sure it goes under the Downloads directory"
-elif test "$output" == *""* ]]; then
+elif test "$output" == *""*; then
   echo "Error: Please make sure you download wtc-lms from slack"
   echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
   echo "Make sure it goes under the Downloads directory"
