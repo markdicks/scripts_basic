@@ -22,6 +22,10 @@ if [[ $output == *"wtc_scripts/update_lms.sh: 18: wtc-lms: not found"* ]]; then
   echo "Error: Please make sure you download wtc-lms from slack"
   echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
   echo "Make sure it goes under the Downloads directory"
+elif [[ $output == *"wtc_scripts/update_lms.sh: 21: [[: not found"* ]]; then
+  echo "Error: Please make sure you download wtc-lms from slack"
+  echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
+  echo "Make sure it goes under the Downloads directory"
 else
   echo "LMS was updated succesfully"
   echo "$output"
