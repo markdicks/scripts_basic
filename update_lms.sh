@@ -8,6 +8,15 @@ if whereis -b "$script_name" >/dev/null 2>&1; then
   sudo rm -rf $(whereis -b "$script_name" | cut -d" " -f2-) >/dev/null 2>&1
 fi
 
+# Check if the script exists in Downloads directory
+if [ ! -f "$HOME/Downloads/$script_name" ]; then
+  echo "Error: Please make sure you download wtc-lms from slack"
+  echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
+  echo "Make sure it goes under the Downloads directory"
+  rm -rf wtc_scripts/ >/dev/null 2>&1
+  exit 1
+fi
+
 # Move the script to /bin
 sudo mv $HOME/Downloads/"$script_name" /bin/ >/dev/null 2>&1
 
@@ -18,20 +27,10 @@ rm -rf wtc_scripts/ >/dev/null 2>&1
 output=$(wtc-lms --version)
 
 # Check if the output contains a certain string
-if test "$output" = "wtc_scripts/update_lms.sh: 18: wtc-lms: not found"; then
-  echo "Error: Please make sure you download wtc-lms from slack"
-  echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
-  echo "Make sure it goes under the Downloads directory"
-elif test "$output" = "wtc_scripts/update_lms.sh: 21: [[: not found"*; then
-  echo "Error: Please make sure you download wtc-lms from slack"
-  echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
-  echo "Make sure it goes under the Downloads directory"
-elif test "$output" == *""*; then
-  echo "Error: Please make sure you download wtc-lms from slack"
-  echo "https://app.slack.com/client/T016EBFH7F0/C01QPC5DLBA"
-  echo "Make sure it goes under the Downloads directory"
-else
+if test "$output" = "WeThinkCode LMS 1.10.1"; then
   echo "LMS was updated succesfully"
   echo "$output"
+else
+  echo "The vesion of the LMS you moved is not the latest one"
 fi
 
