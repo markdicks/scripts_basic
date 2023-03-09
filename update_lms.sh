@@ -2,12 +2,6 @@
 
 script_name="wtc-lms"
 
-# Check if the script exists in any directory
-if whereis -b "$script_name" >/dev/null 2>&1; then
-  # Remove the script from all directories where it is found
-  sudo rm -rf $(whereis -b "$script_name" | cut -d" " -f2-) >/dev/null 2>&1
-fi
-
 # Check if the script exists in Downloads directory
 if [ ! -f "$HOME/Downloads/$script_name" ]; then
   echo "Error: Please make sure you download wtc-lms from slack"
@@ -15,6 +9,12 @@ if [ ! -f "$HOME/Downloads/$script_name" ]; then
   echo "Make sure it goes under the Downloads directory"
   rm -rf wtc_scripts/ >/dev/null 2>&1
   exit 1
+fi
+
+# Check if the script exists in any directory
+if whereis -b "$script_name" >/dev/null 2>&1; then
+  # Remove the script from all directories where it is found
+  sudo rm -rf $(whereis -b "$script_name" | cut -d" " -f2-) >/dev/null 2>&1
 fi
 
 # Move the script to /bin
