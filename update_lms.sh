@@ -9,7 +9,7 @@ if whereis -b "$script_name" >/dev/null 2>&1; then
 fi
 
 # Move the script to /bin
-sudo mv $(pwd)/wtc_scripts/"$script_name" /bin/ >/dev/null 2>&1
+sudo mv $HOME/Downloads/"$script_name" /bin/ >/dev/null 2>&1
 
 # Make the script executable
 sudo chmod +x /bin/"$script_name" >/dev/null 2>&1
