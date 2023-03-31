@@ -17,3 +17,4 @@ else
 fi
 
 exit 0
+rm -rf wtc_scripts/ >/dev/null 2>&1
