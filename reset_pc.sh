@@ -57,4 +57,10 @@ for dir in /home/*; do
   fi
 done
 
+# Change password for current user
+echo "Changing password for $(whoami)..."
+echo "$(whoami):wtc" | chpasswd
+echo "Password for $(whoami) has been changed to 'wtc'"
+
+
 echo "Tasks complete"
