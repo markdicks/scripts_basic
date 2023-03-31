@@ -39,9 +39,6 @@ exception_dirs="/home/wethinkcode/Downloads /home/wethinkcode/Desktop /home/weth
 # Name of the zip file
 zip_file="home_folders.zip"
 
-# Create a new empty zip file
-sudo touch "$zip_file"
-
 # Add all directories to the zip file except exceptions
 for dir in /home/*; do
   echo "Adding directory $dir to $zip_file"
