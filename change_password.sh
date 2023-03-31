@@ -11,7 +11,7 @@ echo "wethinkcode:wtc" | chpasswd
 
 # Check if password change was successful
 if [[ $? -eq 0 ]]; then
-    echo "Password changed successfully."
+    echo "Password changed successfully to wtc."
 else
     echo "Password change failed."
 fi
