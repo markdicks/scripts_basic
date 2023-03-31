@@ -36,15 +36,6 @@ done
 # Create a list of exceptions
 exception_dirs="/home/wethinkcode/Downloads /home/wethinkcode/Desktop /home/wethinkcode/Documents /home/wethinkcode/Music /home/wethinkcode/Pictures /home/wethinkcode/Public /home/wethinkcode/Templates /home/wethinkcode/Videos"
 
-# Name of the zip file
-zip_file="home_folders.zip"
-
-# Add all directories to the zip file except exceptions
-for dir in /home/*; do
-  echo "Adding directory $dir to $zip_file"
-  sudo zip -r "$zip_file" "$dir"
-done
-
 # Loop through the directories in /home
 for dir in /home/*; do
   # Check if the directory is an exception
