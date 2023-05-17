@@ -28,7 +28,7 @@ output=$(wtc-lms --version)
 version=$(echo "$output" | grep -oP '(?<=WeThinkCode LMS )[0-9]+\.[0-9]+\.[0-9]+')
 
 # Check if the output contains a certain string
-if test "$output" = "WeThinkCode LMS 1.10.6"; then
+if test "$output" = "WeThinkCode LMS 1.11.0"; then
   echo "LMS was updated succesfully"
   echo "$output"
 else
