@@ -7,10 +7,10 @@ IDEA_BIN="$(pwd)/bin"
 mkdir -p "/home/$USER/.ide_java"
 
 # Move the entire IntelliJ IDEA directory to the hidden ide_java directory in the user's home directory
-mv "$(dirname "$(pwd)")" "/home/$USER/.ide_java/ideaIC-2022.3.2"
+mv "$(dirname "$(pwd)")" "/home/$USER/.ide_java/ideaIC-2023.1.2"
 
 # Set the path to the idea.sh script in the new directory location
-IDEA_SH="/home/$USER/.ide_java/ideaIC-2022.3.2/bin/idea.sh"
+IDEA_SH="/home/$USER/.ide_java/ideaIC-2023.1.2/bin/idea.sh"
 
 # Create the alias to open the current directory in IntelliJ IDEA
 alias ideadir="$IDEA_SH ."
